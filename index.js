@@ -87,25 +87,32 @@
 //     }
 //     return prefix;
 // };
-var mergeKLists = function(lists) {
-    var dummy = new ListNode(0);
-    var cur = dummy;
-    var heap = [];
-    for (var i = 0; i < lists.length; i++) {
-        if (lists[i] !== null) {
-            heap.push(lists[i]);
-        }
-    }
-    heap.sort(function(a, b) {
-        return a.val - b.val;
-    });
-    while (heap.length > 0) {
-        var node = heap.shift();
-        cur.next = node;
-        cur = cur.next;
-        if (node.next !== null) {
-            heap.push(node.next);
-        }
-    }
-    return dummy.next;
-};
+// var mergeKLists = function(lists) {
+//     var dummy = new ListNode(0);
+//     var cur = dummy;
+//     var heap = [];
+//     for (var i = 0; i < lists.length; i++) {
+//         if (lists[i] !== null) {
+//             heap.push(lists[i]);
+//         }
+//     }
+//     heap.sort(function(a, b) {
+//         return a.val - b.val;
+//     });
+//     while (heap.length > 0) {
+//         var node = heap.shift();
+//         cur.next = node;
+//         cur = cur.next;
+//         if (node.next !== null) {
+//             heap.push(node.next);
+//         }
+//     }
+//     return dummy.next;
+// };
+
+// const arr = ['Red', 'Green', 'Blue', 'Yellow', 'Pink'];
+
+// function randomColor() {
+//     return arr[Math.floor(Math.random() * arr.length)];
+// }
+// console.log(randomColor());
