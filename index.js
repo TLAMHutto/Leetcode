@@ -116,3 +116,66 @@
 //     return arr[Math.floor(Math.random() * arr.length)];
 // }
 // console.log(randomColor());
+
+// function humanReadable (seconds) {
+  
+//     let hours = Math.floor(seconds / 3600)
+//     let minutes = Math.floor((seconds % 3600) / 60)
+//     seconds = Math.floor((seconds % 3600) % 60)
+//     if(hours < 10) {
+//         hours = '0' + hours
+//     }
+//     if(minutes < 10) {
+//         minutes = '0' + minutes
+//     }
+//     if(seconds < 10) {
+//         seconds = '0' + seconds
+//     }
+//     return `${hours}:${minutes}:${seconds}`
+// }
+// function solution(year) {
+//     let century = Math.floor(year / 100)
+//     if(year % 100 > 0) {
+//         century++
+//     }
+//     return century
+// }
+// console.log(solution(1705))
+// function solution(inputString) {
+//     let reversed = inputString.split('').reverse().join('')
+//     return inputString === reversed
+// }
+
+// function solution(inputArray) {
+//     // Given an array of integers, find the pair of adjacent elements that has the largest product and return that product
+//     let largest = inputArray[0] * inputArray[1]
+//     for(let i = 1; i < inputArray.length - 1; i++) {
+//         let product = inputArray[i] * inputArray[i + 1]
+//         if(product > largest) {
+//             largest = product
+//         }
+//     }
+//     return largest
+
+// }
+// console.log(largestTwo([3, 6, -2, -5, 7, 3]))
+// function solution(n){
+//     let area = 1
+//     for (let i = 1; i < n; i++) {
+//         area += i * 4
+//     }
+//     return area
+// }
+// console.log(solution(3))
+function solution(statues) {
+    let sorted = statues.sort((a, b) => a - b)
+    let count = 0
+    for (let i = 0; i < sorted.length - 1; i++) {
+        let diff = sorted[i + 1] - sorted[i]
+        if (diff > 1) {
+            count += diff - 1
+        }
+    }
+    return count
+}
+console.log(solution([6, 2, 3, 8]))
